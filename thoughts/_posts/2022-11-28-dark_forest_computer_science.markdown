@@ -47,7 +47,7 @@ in a computer scientist's point of view. A computer science might try "Given a p
 the sentence such that it conforms to the Skyscrapers grammar or prove that such a completion does not exist."
 This is much harder to solve.
 
-As we said `"Computer Scientists" work is often concerned with "automatically" and "efficiently"`. Now about efficiently
+As we said `"Computer Scientists" work is often concerned with "automatically" and "efficiently"`. Now about "efficiently",
 let's see how an algorithm could be expensive. Testing if a sentence conforms to the grammar is an easy task, one could
 enumerate all the possible grid layouts and find the first possible solution that is part of the grammar. The problem is
 that, in the worst case, there will be 5<sup>25</sup> = 298023223876953125 possibilities!
@@ -61,7 +61,7 @@ There are problems that are so complex that either no approximation can be found
 for the problem's language. Foe example, consider poker. Since it's both non-deterministic and unobservable, an optimal
 poker-playing algorithm will be a function of the other players strategies. Creating an algorithm may require building 
 [heuristics](https://en.wikipedia.org/wiki/Heuristic).
-The last example generally falls under the term "Artificial Intelligence (AI)" The creation of algorithms capable of 
+The last example generally falls under the term "Artificial Intelligence (AI)". The creation of algorithms capable of 
 finding solutions to arbitrarily difficult problems, And there are generally two camps: "neats" and rge "scruffies".
 The "neats" like to design systems using formal logic and mathematics, since such methods are infallible, ince a method
 is produced then the work is done. The "scruffies", on the other hand, like to engineer systems that tend to get the job done
