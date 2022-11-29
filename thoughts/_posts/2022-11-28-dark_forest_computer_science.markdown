@@ -1,16 +1,16 @@
 ---
 layout: default
-title:  "Dark forest - What am I even doing?"
+title:  "Black forest - What am I even doing?"
 date:   2022-11-28 21:17:30 +0100
 category: thoughts
 ---
 
-# (Dark forest) - what am I even doing?
+# (Black forest) - what am I even doing?
 
 I'm often asked "what I'm doing". Many have certain misunderstanding and stereotypes that make the simple answer of
 "Computer Science" insufficient.
 
-This is an attempt to answer this simple question, in the hopes that I can simple refer people to this article 
+This is an attempt to answer this simple question, in the hopes that I can simply refer people to this article 
 instead of explain this for the thousandth time.
 
 ## What am I doing?
@@ -58,12 +58,12 @@ See? How "efficiently" matters?
 
 One way of thinking about "Computer Scientists" is in what type of problems they aim to solve.
 There are problems that are so complex that either no approximation can be found or, perhaps, the grammar isn't even known
-for the problem's language. Foe example, consider poker. Since it's both non-deterministic and unobservable, an optimal
+for the problem's language. For example, consider poker. Since it's both non-deterministic and unobservable, an optimal
 poker-playing algorithm will be a function of the other players strategies. Creating an algorithm may require building 
 [heuristics](https://en.wikipedia.org/wiki/Heuristic).
 The last example generally falls under the term "Artificial Intelligence (AI)". The creation of algorithms capable of 
 finding solutions to arbitrarily difficult problems, And there are generally two camps: "neats" and rge "scruffies".
-The "neats" like to design systems using formal logic and mathematics, since such methods are infallible, ince a method
+The "neats" like to design systems using formal logic and mathematics, since such methods are infallible, once a method
 is produced then the work is done. The "scruffies", on the other hand, like to engineer systems that tend to get the job done
 and then, retrospectively, examine the system and figure out why it worked.
 
