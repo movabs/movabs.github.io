@@ -11,7 +11,7 @@ category: ai
 
 **A pdf version of this article is available at [here](https://github.com/lenartlola/intent_classifier/blob/main/pdf/machine-learning-NLP.pfd)**
 
-**You can also find the code base on (GitHub)[https://github.com/lenartlola/intent_classifier]**
+**You can also find the code base on [GitHub](https://github.com/lenartlola/intent_classifier)**
 
 ### 1. Introduction
 
