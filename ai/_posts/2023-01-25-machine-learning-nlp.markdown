@@ -9,6 +9,10 @@ category: ai
 
 ## Intent Classifier:
 
+**A pdf version of this article is available at [here](https://github.com/lenartlola/intent_classifier/blob/main/pdf/machine-learning-NLP.pfd)**
+
+**You can also find the code base on (GitHub)[https://github.com/lenartlola/intent_classifier]**
+
 ### 1. Introduction
 
 Natural Language Processing (NLP) is a field of Machine Learning.
