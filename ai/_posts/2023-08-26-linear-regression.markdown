@@ -70,6 +70,10 @@ between the real $$ Y $$ value and our prediction.
 
 ### 2.3. Minimizing Errors:
 
+The trick revolves around the quest to minimize these errors. We do this by adjusting the slope and starting point. 
+The better the line fits, the smaller the differences between our predictions and the actual values. 
+That's why we say the goal of linear regression is to draw a line that makes these differences as tiny as we can.
+
 ## 3. The Cost Function: Determining Optimal Model Parameters
 
 ### 3.1. The Role of the Cost Function:
