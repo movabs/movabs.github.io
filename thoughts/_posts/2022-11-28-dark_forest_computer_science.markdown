@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Black forest - What am I even doing?"
 date:   2022-11-28 21:17:30 +0100
 category: thoughts
