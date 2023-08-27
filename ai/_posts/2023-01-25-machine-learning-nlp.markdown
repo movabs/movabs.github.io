@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Machine Learning NLP - Natural Language Processing"
 date:   2023-01-25 07:17:30 +0100
 category: ai
