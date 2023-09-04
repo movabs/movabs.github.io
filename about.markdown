@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Hello World!
 
-I'm n0bits, or that's at least my pseudo, I'm currently student at [42 Lausanne](https://www.42lausanne.ch/).
+I'm Lenart, or that's at least my pseudo, I'm currently student at [42 Lausanne](https://www.42lausanne.ch/).
 I'm a curious programmer, I like to learn different things and share my experience
 therefore I created this blog to share my genuine thoughts.
 

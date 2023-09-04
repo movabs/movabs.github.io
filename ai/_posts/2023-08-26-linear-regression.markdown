@@ -10,20 +10,19 @@ category: ai
 ## Abstract:
 
 Linear regression, a foundational statistical technique, constitutes a vital instrument for modeling intricate 
-relationships between dependent and independent variables within the empirical realm. This expository inquiry 
-embarks on an incisive exploration of linear regression's underpinnings, encompassing its mathematical essence, 
-optimization strategies, and evaluative paradigms. We unveil the cardinal role of linear regression in diverse domains, 
-propounding it as an analytical cornerstone for predicting, elucidating, and discerning inter-variable dynamics. 
+relationships between dependent and independent variables within the empirical realm. \
+This expository inquiry embarks on an incisive exploration of linear regression's underpinnings, 
+encompassing its mathematical essence, optimization strategies, and evaluative paradigms. \
 Our exposition delves into the derivation of the fundamental formula, elucidating the contextual significance of the 
-intercept and slope parameters. Subsequently, we embark on a rigorous dissection of the cost function, 
-a pivotal construct instrumental in the estimation of model parameters, grounded in the Mean Squared Error $$(MSE)$$ paradigm. 
+intercept and slope parameters. \
+Subsequently, we embark on a rigorous dissection of the cost function, grounded in the Mean Squared Error $$(MSE)$$ paradigm. \
 An incisive exposition of gradient descent as a quintessential optimization algorithm unfolds, 
 traversing its iterative mechanics towards optimizing parameter space.
 
-The pursuit of model fidelity unfurls through meticulous evaluation via $$R-squared$$, $$Root Mean Squared Error (RMSE)$$, 
-and $$Residual Standard Error (RSE)$$ metrics, thereby culminating in a comprehensive model appraisal. 
+The pursuit of model fidelity unfurls through evaluation via $$R-squared$$, $$Root Mean Squared Error (RMSE)$$, 
+and $$Residual Standard Error (RSE)$$ metrics. 
 By syncretizing mathematical rigor with pragmatic utility, this work furnishes an in-depth comprehension of 
-linear regression's mechanics, manifesting its quintessence as an indelible analytical methodology within the scientific and practical domains.
+linear regression's mechanics.
 
 ## 1. Introduction
 
@@ -69,6 +68,10 @@ the estimation of the corresponding $$ Y $$ value. But remember, there's a bit o
 between the real $$ Y $$ value and our prediction.
 
 ### 2.3. Minimizing Errors:
+
+The trick revolves around the quest to minimize these errors. We do this by adjusting the slope and starting point. 
+The better the line fits, the smaller the differences between our predictions and the actual values. 
+That's why we say the goal of linear regression is to draw a line that makes these differences as tiny as we can.
 
 ## 3. The Cost Function: Determining Optimal Model Parameters
 
@@ -177,4 +180,4 @@ $$ TSS = \sum_{i=1}^{N} (y_i - \bar{y})^2 $$
 
 Below is a link to a Python implementation of linear regression.
 
-https://github.com/lenartlola/ft_linear_regression
+[ft_linear_regressoin](https://github.com/lenartlola/ft_linear_regression)
