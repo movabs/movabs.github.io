@@ -2,7 +2,7 @@
 author = "Lenart"
 title = "Interviewing Lenart. The world's most wanted hacker"
 date = "2023-05-05"
-description = ""
+description = "Behind the mind of a hacker"
 tags = [
 "thoughts",
 ]

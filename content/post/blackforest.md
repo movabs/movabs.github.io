@@ -2,7 +2,7 @@
 author = "Lenart"
 title = "Black forest - What am I even doing?"
 date = "2022-11-28"
-description = ""
+description = "An attempt to answer some simple questions"
 tags = [
 "thoughts",
 ]
