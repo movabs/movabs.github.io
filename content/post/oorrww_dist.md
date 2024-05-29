@@ -1,6 +1,6 @@
 +++
 author = "Lenart"
-title = "award - issue in printf formatters"
+title = "oorrww - some other bytes to rop l3akCTF"
 date = "2024-05-28"
 description = "Everyone gets award."
 tags = [
