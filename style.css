@@ -1,9 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     color: #FEFEFE;
     background-color: #252735;
     margin: 0 auto;
     padding: 1em 0 1em 0;
     line-height: 1.6;
+    /*display: flex;*/
+    flex-direction: column;
 }
 
 a {
@@ -25,11 +33,13 @@ pre {
 
 .container {
     max-width: 60%;
+    min-height: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: #252735;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     color: #d3d3d3;
+    flex: 1;
 }
 
 h1 {
@@ -54,4 +64,14 @@ li {
 .txtdiv {
     display: block;
     text-align: left;
+}
+
+footer {
+    height: 60px;
+    background-color: #252735;
+    color: #d3d3d3;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
