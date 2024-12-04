@@ -1,84 +1,72 @@
-html, body {
-    height: 100%;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    color: #FEFEFE;
-    background-color: #252735;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    max-width: 60%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+html, body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.vim-container {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+    text-align: center;
 }
 
-.highlight {
-    background-color: #0f1010;
+.vim-content {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.listingblock {
-    background-color: #0f1010;
-    border: 1px solid #0f1010;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 10px;
+#message {
+    max-width: 70%;
+    margin: 50px;
 }
 
-/*code {*/
-/*    background-color: #0f1010;*/
-/*}*/
-
-/*pre.CodeRay {*/
-/*    background: #070707*/
-/*}*/
+#categories {
+    max-width: 70%;
+}
 
 a {
-    color: #93ffd7;
+    color: #162fd5;
     text-decoration: none;
 }
 
-@font-face {
-    font-family: "unifont";
-    src: url("./unifont.woff") format('woff');
-}
-
-pre {
-    font-family: "unifont", "Lucida Console", monospace, Monaco;
-    font-size: 16px;
-    line-height: 1.0;
-    padding-left: 20px;
-}
-
-h1 {
-    color: #ececec;
+.vim-footer {
+    font-size: 0.8rem;
+    color: #777;
     text-align: center;
+    padding: 10px 0;
+    background-color: #1a1a1a;
+    position: relative;
+    width: 100%;
 }
 
-p {
-    margin: 10px 0;
-}
-
-ul {
-    list-style-type: disc;
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-li {
-    margin: 5px 0;
-}
-
-#footer {
-    height: 60px;
-    background-color: #252735;
-    color: #d3d3d3;
+.vim-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.8rem;
+    color: #777;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
+    background-color: #1a1a1a;
+    padding: 10px 0;
 }
+

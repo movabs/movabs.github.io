@@ -1,138 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
-<title>127.0.0.1</title>
-<style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    color: #FEFEFE;
-    background-color: #252735;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    max-width: 60%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-}
-
-.highlight {
-    background-color: #0f1010;
-}
-
-.listingblock {
-    background-color: #0f1010;
-    border: 1px solid #0f1010;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 10px;
-}
-
-/*code {*/
-/*    background-color: #0f1010;*/
-/*}*/
-
-/*pre.CodeRay {*/
-/*    background: #070707*/
-/*}*/
-
-a {
-    color: #93ffd7;
-    text-decoration: none;
-}
-
-@font-face {
-    font-family: "unifont";
-    src: url("./unifont.woff") format('woff');
-}
-
-pre {
-    font-family: "unifont", "Lucida Console", monospace, Monaco;
-    font-size: 16px;
-    line-height: 1.0;
-    padding-left: 20px;
-}
-
-h1 {
-    color: #ececec;
-    text-align: center;
-}
-
-p {
-    margin: 10px 0;
-}
-
-ul {
-    list-style-type: disc;
-    margin: 10px 0;
-    padding-left: 20px;
-}
-
-li {
-    margin: 5px 0;
-}
-
-#footer {
-    height: 60px;
-    background-color: #252735;
-    color: #d3d3d3;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>127.0.0.1 - Vim Style</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="article">
-<div id="header">
-<h1>127.0.0.1</h1>
-</div>
-<div id="content">
-<div class="sect1">
-<h2 id="_hello_world">Hello, World!</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Welcome to my personal blog! Here, I explore and discuss the amazing fields of computer science and mathematics.
-My primary interest lies in theoretical aspects, and this blog serves as a collection of my personal notes,
-thoughts, and references to original resources.</p>
-</div>
-<div class="paragraph">
-<p>The topics I am currently exploring include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Mathematics</p>
-</li>
-<li>
-<p>Algorithms</p>
-</li>
-<li>
-<p>Cryptography</p>
-</li>
-<li>
-<p><a href="./src/os/os.html">Operating Systems and Kernel internals</a></p>
-</li>
-<li>
-<p>Compiler theory</p>
-</li>
-</ul>
-</div>
-<div id="footer" class="paragraph">
-<p>&copy; 2024 movabs. All rights reserved.</p>
-</div>
-</div>
-</div>
-</div>
+<body>
+    <div class="vim-container">
+        <div class="vim-content">
+            <br>Hello, World!
+            <br>Version 0.0.1 (2024)
+            <br>Type ':help' for help.
+            <br>
+            <br>
+            <div id="message">
+                Welcome to my personal blog!
+                Here, I explore and discuss the amazing fields of computer science and mathematics.
+                My primary interest lies in theoretical aspects,
+                and this blog serves as a collection of my personal notes,
+                thoughts, and references to original resources.
+            </div>
+            <div id="categories">
+                <br>The topics I am currently exploring include:
+                <br><code>&lt;</code>Mathematics<code>&gt;</code>
+                <br><code>&lt;</code>Computer Science<code>&gt;</code>
+                <br><code>&lt;</code>Algorithms<code>&gt;</code>
+                <br><code>&lt;</code>Cryptography<code>&gt;</code>
+                <br>
+                <code>&lt;</code><a href="./src/os/os.html" class="vim-file-link">Operating Systems and Kernel internals</a><code>&gt;</code>
+                <br><code>&lt;</code>Compiler theory<code>&gt;</code>
+            </div>
+
+        </div>
+        <div class="vim-footer">
+            &copy; 2024 movabs. All rights reserved.
+        </div>
+    </div>
 </body>
 </html>
+
