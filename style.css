@@ -13,20 +13,19 @@ html, body {
     display: grid;
     place-items: center;
     padding: 0;
-    overflow: hidden;
     height: 100%;
 }
 
-.vim-container {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 60%;
+    /*max-width: 60%;*/
     text-align: center;
 }
 
-.vim-content {
+.content {
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
@@ -35,12 +34,18 @@ html, body {
 }
 
 #message {
-    max-width: 70%;
+    width: 40%;
     margin: 50px;
 }
 
+@media only screen and (max-width: 768px) {
+    #message {
+        width: 90%;
+    }
+}
+
 #categories {
-    max-width: 70%;
+    max-width: 95%;
 }
 
 a {
