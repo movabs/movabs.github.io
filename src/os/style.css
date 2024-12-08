@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 60%;
+    width: 100ch;
+}
+
+.header {
+    color: #4961f8;
+}
+
+#tags {
+    color: #ececec;
+}
+
+.slash {
+    color: #12eae1;
+}
+
+.articles {
+    color: #ececec;
+}
+
+a {
+    color: #162fd5;
+    text-decoration: none;
+}
+
