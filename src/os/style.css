@@ -12,18 +12,19 @@ html, body {
     color: #fff;
     padding: 0;
     height: 100%;
+    max-width: 100ch;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    max-width: 60%;
     width: 100ch;
 }
 
 .header {
     color: #4961f8;
+    max-width: 100%;
 }
 
 #tags {
