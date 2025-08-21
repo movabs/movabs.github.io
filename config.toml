@@ -72,6 +72,6 @@ twitter = "xorr0r0"
 #enabled = true
 #access_token = "<your_access_token>"
 
-taxonomies = [
-    {name = "tags", feed = true},
-]
+#taxonomies = [
+#    {name = "tags", feed = true},
+#]
