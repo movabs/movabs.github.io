@@ -3,7 +3,6 @@ on:
     branches:
       - zola
 
-on: push
 name: Build and deploy GH Pages
 jobs:
   build:
