@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://movabs.github.io/"
+base_url = "https://movabs.github.io"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -32,7 +32,7 @@ galleria.enabled = true
 
 navbar_items = [
  { code = "en", nav_items = [
-  { url = "$BASE_URL", name = "Home" },
+  { url = "$BASE_URL/", name = "Home" },
   { url = "$BASE_URL/blog", name = "Posts" },
  ]},
 ]
