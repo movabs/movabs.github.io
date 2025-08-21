@@ -1,4 +1,4 @@
-baseURL = 'http://gohugo.io/'
+base_url = 'http://gohugo.io/'
 languageCode = 'en-us'
 theme = "nightfall"
 
