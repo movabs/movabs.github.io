@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://movabs.github.io/sitemap.xml
